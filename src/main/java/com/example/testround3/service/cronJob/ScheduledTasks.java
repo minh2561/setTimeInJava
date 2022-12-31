@@ -33,7 +33,7 @@ public class ScheduledTasks  {
         String timeCron = entity.getTimeCron();
         CronTrigger cronTrigger = new CronTrigger(timeCron);
         scheduledTask = taskScheduler.schedule(commentsServiceImp, cronTrigger);
-        System.out.println("-----------------------------GETTTTTTTTTTT------------------------------------------------------"+cronTrigger);
+        System.out.println("-----------------------------GETTTTTTTTTTT-----------------------------"+cronTrigger);
     }
     public void stopTask() {
         // Cancel the scheduled task

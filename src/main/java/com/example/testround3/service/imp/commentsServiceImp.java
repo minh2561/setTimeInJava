@@ -35,39 +35,27 @@ public class commentsServiceImp implements commentsServiceInterface, Runnable {
     private TableReponsitory tableReponsitory;
     @Override
     public responPage getAll(String timeCronReq) {
-//        Thread t = new Thread(new callGetAll());
         TableEntity entity = tableReponsitory.findById(GET_ALL_COMMENT).get();
         entity.setTimeCron(timeCronReq);
         tableReponsitory.save(entity);
-        List<commentsEntity> list = commentsResponsitory.findAll();
-//        deptroytaskScheduler.destroy();
-//        taskScheduler.schedule();
-        List<commentsDto> listDto = list.stream().map(commentsMapper::mapEntity).collect(Collectors.toList());
-        log.info(listDto.toString());
-        System.out.println(listDto+ "-----------------MINH------------------");
-        return new responPage("get success comments", listDto);
+//        List<commentsEntity> list = commentsResponsitory.findAll();
+//        List<commentsDto> listDto = list.stream().map(commentsMapper::mapEntity).collect(Collectors.toList());
+//        log.info(listDto.toString());
+//        System.out.println(listDto+ "-----------------MINH------------------");
+        return null;
     }
 
 
 
-//    @Override
-//    public responPage callGetAll() {
-////        Thread t = new Thread(new callGetAll());
-//        TableEntity entity = tableReponsitory.findById(GET_ALL_COMMENT).get();
-////        entity.setTimeCron(timeCronReq);
-//        tableReponsitory.save(entity);
-//        List<commentsEntity> list = commentsResponsitory.findAll();
-////        deptroytaskScheduler.destroy();
-////        taskScheduler.schedule();
-//        List<commentsDto> listDto = list.stream().map(commentsMapper::mapEntity).collect(Collectors.toList());
-//        log.info(listDto.toString());
-////        t.start();
-//        return new responPage("get success comments", listDto);
-//    }
-
     void callGetAll() {
-        TableEntity entity = tableReponsitory.findById(GET_ALL_COMMENT).get();
-        this.getAll(entity.getTimeCron());
+//        TableEntity entity = tableReponsitory.findById(GET_ALL_COMMENT).get();
+//        this.getAll(entity.getTimeCron());
+
+
+        List<commentsEntity> list = commentsResponsitory.findAll();
+        List<commentsDto> listDto = list.stream().map(commentsMapper::mapEntity).collect(Collectors.toList());
+        log.info(listDto.toString());
+        System.out.println(listDto+ "-----------------MINH------------------");
     }
 
     @Override
