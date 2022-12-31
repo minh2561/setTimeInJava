@@ -42,6 +42,9 @@ public class commentsServiceImp implements commentsServiceInterface, Runnable {
 //        List<commentsDto> listDto = list.stream().map(commentsMapper::mapEntity).collect(Collectors.toList());
 //        log.info(listDto.toString());
 //        System.out.println(listDto+ "-----------------MINH------------------");
+//        return new responPage("add complete",listDto);
+
+
         return null;
     }
 
