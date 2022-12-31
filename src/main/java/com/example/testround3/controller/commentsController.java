@@ -37,8 +37,8 @@ public class commentsController extends ScheduledTasks {
 
     @PostMapping
     public ResponseEntity<?>getAll(@RequestBody commentsIn commentsIn){
-        scheduledTasks.stopTask();
         commentsServiceInterface.getAll(commentsIn.getTimeCrone());
+        scheduledTasks.stopTask();
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
