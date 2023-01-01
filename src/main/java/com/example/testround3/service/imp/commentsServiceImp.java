@@ -7,6 +7,7 @@ import com.example.testround3.model.dto.commentsDto;
 import com.example.testround3.model.entity.TableEntity;
 import com.example.testround3.model.entity.commentsEntity;
 import com.example.testround3.model.entity.postEntity;
+import com.example.testround3.model.in.DateIn;
 import com.example.testround3.model.in.commentsIn;
 import com.example.testround3.responsitory.TableReponsitory;
 import com.example.testround3.responsitory.commentsResponsitory;
@@ -61,6 +62,15 @@ public class commentsServiceImp implements commentsServiceInterface, Runnable {
         System.out.println(listDto+ "-----------------MINH------------------");
     }
 
+
+
+
+
+
+
+
+
+
     @Override
     public respon create(commentsIn commentsIn) {
         commentsEntity commentsEntity = commentsMapper.mapIn(commentsIn);
@@ -85,6 +95,22 @@ public class commentsServiceImp implements commentsServiceInterface, Runnable {
         commentsEntity.setName_Comments(commentsIn.getName_Comments());
         commentsResponsitory.save(commentsEntity);
         return new respon(true, "update comments success");
+    }
+
+
+
+
+
+    @Override
+    public responPage getAllTime(DateIn dateIn) {
+        Integer Second = dateIn.getMinhdate();
+        System.out.println(Second);
+//        String dateMinh = "*/{} * * * * *";
+        if (Second<=60){
+//            String resul = String.format(dateMinh,Second);
+            System.out.println("*/"+Second+" * * * * * *");
+        }
+        return null;
     }
 
 

@@ -8,6 +8,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class DateIn {
-//    public static String get;
-    private String minhdate;
+    private Integer minhdate;
 }

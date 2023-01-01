@@ -35,6 +35,8 @@ public class commentsController extends ScheduledTasks {
     private commentsServiceImp commentsServiceInterface;
     private commentsServiceImp commentsServiceImp;
 
+
+//  set time
     @PostMapping
     public ResponseEntity<?>getAll(@RequestBody commentsIn commentsIn){
         commentsServiceInterface.getAll(commentsIn.getTimeCrone());
@@ -43,17 +45,33 @@ public class commentsController extends ScheduledTasks {
     }
 
 
+//    start
     @PostMapping("/get")
     public ResponseEntity<?>callGetAll(){
         scheduledTasks.scheduleTasks();
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
+//    stop
     @PostMapping("/del")
     public ResponseEntity<?>callDelAll(){
         scheduledTasks.stopTask();
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
+
+
+
+
+
+    @PostMapping("/allTime")
+    public ResponseEntity<?>getAllTime(@RequestBody DateIn dateIn){
+        commentsServiceInterface.getAllTime(dateIn);
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
+
+
+
+
 
     @DeleteMapping("/delete/{IdComments}")
     public ResponseEntity<?>delete(@PathVariable Integer IdComments){
