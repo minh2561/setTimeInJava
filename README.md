@@ -2,7 +2,6 @@
 
 * Set time 
 
-
 METHOD: POST
 
 URL: http://localhost:8080/apiComments
@@ -14,8 +13,9 @@ body:
 
 
 
-* Run thread Get data
 
+
+* Run thread Get data
 
 METHOD: POST
 
@@ -24,8 +24,9 @@ URL: http://localhost:8080/apiComments/get
 
 
 
-* delete thread
 
+
+* delete thread
 
 METHOD: POST
 
