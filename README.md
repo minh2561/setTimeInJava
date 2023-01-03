@@ -8,7 +8,7 @@ URL: http://localhost:8080/apiComments
 
 body: 
 {
-    "timeCrone":"*/9 * * * * *"
+    "timeCrone":"* * * * * *"
 }
 
 
