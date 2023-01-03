@@ -104,12 +104,25 @@ public class commentsServiceImp implements commentsServiceInterface, Runnable {
     @Override
     public responPage getAllTime(DateIn dateIn) {
         Integer Second = dateIn.getMinhdate();
-        System.out.println(Second);
-//        String dateMinh = "*/{} * * * * *";
-        if (Second<=60){
-//            String resul = String.format(dateMinh,Second);
-            System.out.println("*/"+Second+" * * * * * *");
-        }
+//        ngày tháng bắt đầu
+        Integer minuteStart = dateIn.getMinuteStart();
+        Integer dayStart = dateIn.getDayStart();
+        Integer monthStart = dateIn.getMonthStart();
+        Integer yearStart = dateIn.getYearStart();
+
+//        ngày tháng kết thúc
+        Integer minuteEnd = dateIn.getMinuteEnd();
+        Integer dayEnd = dateIn.getDayEnd();
+        Integer monthEnd = dateIn.getMonthEnd();
+        Integer yearEnd = dateIn.getYearEnd();
+//        String setTimeBot = "*/"+Second+" * * " + dayStart + "-" + dayEnd + " "+monthStart+"-"+monthEnd+ " * "+yearStart+"-"+yearEnd;
+//        System.out.println(Second);
+        String setTimeBot = "*/"+Second+" "+ minuteStart + "-" + minuteEnd +" * " + dayStart + "-" + dayEnd + " "+monthStart+"-"+monthEnd+ " *";
+        System.out.println(setTimeBot);
+        TableEntity entity = tableReponsitory.findById(GET_ALL_COMMENT).get();
+        entity.setTimeCron(setTimeBot);
+        tableReponsitory.save(entity);
+
         return null;
     }
 

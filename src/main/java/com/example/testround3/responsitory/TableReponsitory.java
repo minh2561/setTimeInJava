@@ -5,5 +5,5 @@ import com.example.testround3.model.entity.commentsEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface TableReponsitory extends JpaRepository <TableEntity, Integer>{
-
+    TableEntity getById(Integer Id);
 }

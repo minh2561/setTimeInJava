@@ -9,4 +9,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class DateIn {
     private Integer minhdate;
+    private Integer minuteStart;
+    private Integer dayStart;
+    private Integer monthStart;
+    private Integer yearStart;
+
+    private Integer minuteEnd;
+    private Integer dayEnd;
+    private Integer monthEnd;
+    private Integer yearEnd;
 }

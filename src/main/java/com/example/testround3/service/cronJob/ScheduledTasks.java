@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import java.time.Instant;
 import java.util.concurrent.ScheduledFuture;
 
 @Slf4j
@@ -18,16 +19,12 @@ import java.util.concurrent.ScheduledFuture;
 public class ScheduledTasks  {
     private static final Integer GET_ALL_COMMENT = 1;
     @Autowired private TaskScheduler taskScheduler;
-//    @Autowired private
     @Autowired
     private commentsServiceImp commentsServiceImp;
     @Autowired
     private TableReponsitory tableReponsitory;
-
     private ScheduledFuture<?> scheduledTask;
-//    @PostConstruct
     public void scheduleTasks() {
-
         TableEntity entity = (tableReponsitory.findById(GET_ALL_COMMENT).get());
         log.info(entity.getTimeCron(),"time");
         String timeCron = entity.getTimeCron();
