@@ -8,6 +8,7 @@ URL: http://localhost:8080/apiComments/allTime
 
 body: 
 {
+
     "minhdate":10,
     "minuteStart":35,
     "dayStart":3,
@@ -18,6 +19,7 @@ body:
     "dayEnd":10,
     "monthEnd":1,
     "yearEnd":2023
+    
 }
 
 
